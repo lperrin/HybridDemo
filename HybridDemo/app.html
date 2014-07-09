@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body {
+                background: #222;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <p>This is the web app</p>
+        
+        <p>I was called <span id="counter">0</span> times.</p>
+        
+        <p><button>Call Objective-C</button></p>
+        
+        <script type="text/javascript">
+            var counter = 0;
+
+            window.jsapi = {
+                incrementCounter: function (name) {
+                    counter++;
+                    document.querySelector('#counter').innerHTML = counter;
+                }
+            };
+        
+            document.querySelector('button').addEventListener('click', function () {
+              window.osx.sendNotification_message_link_('Notification from JS', 'This is just a small demo.', 'https://frontapp.com');
+            });
+        </script>
+    </body>
+</html>
